@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NEXSUS|Cash-Register-Webapp</title>
+        <link rel="stylesheet" href="/Cash-Register-App/style.css">
+        <link rel="shortcut icon" href="/Cash-Register-App/NEXSUS.jpg"
+            type="image/x-icon">
+    </head>
+    <body>
+        <label class="theme-toggle-label">Dark Mode:
+            <input type="checkbox" name id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+
+        <main id="container">
+            <img src="/Cash-Register-App/NEXSUS.jpg" alt="NEXSUS Logo"
+                width="50" height="50">
+            <h1>NEXSUS CASH REGISTER</h1>
+            <label for="item-price">Enter Item Price:</label>
+            <input type="number" name="item-price" id="item-price" min="0"
+                step="any">
+            <label for="cash">Enter Cash Provided:</label>
+            <input type="number" name="cash" id="cash" min="0" step="any">
+
+            <div class="btns">
+                <button id="purchase-btn">Purchase</button>
+                <button id="clear-btn">Clear</button>
+            </div>
+            <p id="price"></p>
+            <p id="change"></p>
+            <div id="change-due"></div>
+            <div id="cash-in-drawer"></div>
+            <table id="cash-in-drawer-table"> 
+                <thead> 
+                    <tr> 
+                        <th>Denomination</th>
+                        <th>Count</th> 
+                    </tr> 
+                </thead> 
+                <tbody>
+                    <!-- Cash drawer content will be dynamically added here -->
+                </tbody> 
+            </table>
+            <span class="toggle-slider"></span>
+        </main>
+        <script src="/Cash-Register-App/main.js"></script>
+    </body>
+</html>

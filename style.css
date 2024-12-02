@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg-color: #0EFEB6;
+    --container-bg-color: #F8F8F8;
+    --container-shadow-color: 0 0 10px #0C1016;
+    --h1-color: linear-gradient(90deg, #0C1016, #0EFEB6);
+    --text-color: #0C1016;
+    --input-border-color: #0C1016;
+    --hover-input-border-color: #2190FF;
+    --btn-color: #FFD71F;
+    --btn-font-color: #F8F8F8;
+    --hover-btn-color: #0EFEB6;
+    --hover-btn-font-color: #2190FF;
+    --clear-btn-color: #FE9A77;
+    --clear-btn-font-color: #F8F8F8;
+    --hover-clear-btn-color: #FF2121;
+    --hover-clear-btn-font-color: #FE9A77;
+    --output-container-color: #0C1016;
+    --output-text-color: #2190FF;
+    --toggle-slider: #2190FF;
+    --toggle-slider-circle: #F8F8F8;
+}
+
+body.dark {
+    --body-bg-color: #0C1016;
+    --container-bg-color: #3D4045;
+    --container-shadow-color: 0 0 10px #2190FF;
+    --h1-color: linear-gradient(45deg, #FE9A77, #2190FF);
+    --text-color: #F8F8F8;
+    --input-border-color: #F8F8F8;
+    --hover-input-border-color: #FE9A77;
+    --btn-color: #FFD71F;
+    --btn-font-color: #F8F8F8;
+    --hover-btn-color: #0EFEB6;
+    --hover-btn-font-color: #2190FF;
+    --clear-btn-color: #FE9A77;
+    --clear-btn-font-color: #F8F8F8;
+    --hover-clear-btn-color: #FF2121;
+    --hover-clear-btn-font-color: #FE9A77;
+    --output-container-color: #2190FF;
+    --output-text-color: #0C1016;
+    --toggle-slider: #0C1016;
+    --toggle-slider-circle: #F8F8F8;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    height: 100%;
+    background-color: var(--body-bg-color);
+    padding: 0 1.25rem;
+    color: var(--text-color);
+    padding: 2.5rem;
+}
+
+#container {
+    background-color: var(--container-bg-color);
+    box-shadow: var(--container-shadow-color);
+    padding: 2.5rem;
+    border-radius: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(1.875rem, 4vw + 0.625rem, 2.5rem);
+    font-weight: 750;
+    margin-bottom: 1.25rem;
+    background: var(--h1-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input,
+button {
+    padding: 1.25rem;
+    margin: 0.3125rem 1.25rem;
+    font-size: clamp(1rem, 4vw + 1rem, 1.25rem);
+    font-family: "Lato";
+    font-weight: 600;
+    border-radius: 0.625rem;
+}
+
+input {
+    border: 0.1875rem solid var(--input-border-color);
+    transition: border-color 0.5s ease-in-out;
+}
+
+input:hover {
+    border-color: var(--hover-input-border-color);
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#purchase-btn {
+    background-color: var(--btn-color);
+    color: var(--btn-font-color);
+}
+
+#purchase-btn:hover {
+    background-color: var(--hover-btn-color);
+    color: var(--hover-btn-font-color);
+    transform: scale(1.1);
+}
+
+#clear-btn {
+    background-color: var(--clear-btn-color);
+    color: var(--clear-btn-font-color);
+}
+
+#clear-btn:hover {
+    background-color: var(--hover-clear-btn-color);
+    color: var(--hover-clear-btn-font-color);
+    transform: scale(1.1);
+}
+
+.btns {
+    padding: 1.25rem 0;
+}
+
+.theme-toggle-label {
+    display: flex;
+    align-items: center;
+    margin-top: 1.25rem;
+}
+
+.theme-toggle-label span {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.theme-toggle-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    cursor: pointer;
+    width: 3.75rem;
+    height: 2.125rem;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+    margin-left: 0.5rem;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.625rem;
+    width: 1.625rem;
+    left: 0.25rem;
+    bottom: 0.25rem;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--body-bg-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(1.625rem);
+}
+
+#change, #change-due {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    font-family: "Lato";
+    font-weight: 900;
+    text-align: center;
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#change.show, #change-due.show {
+    display: inline-block;
+    opacity: 1;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1.25rem;
+    text-align: center;
+    border: 0.0625rem solid var(--input-border-color);
+}
+
+th,
+td {
+    padding: 0.625rem;
+    border: 0.0625rem solid var(--input-border-color);
+}
+
+th {
+    background-color: var(--body-bg-color);
+    color: var(--toggle-slider-circle);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--container-bg-color);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--container-bg-color);
+}
