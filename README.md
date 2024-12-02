@@ -14,7 +14,7 @@ Welcome to the NEXSUS Cash Register Web App! This application allows users to in
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/nexus-cash-register-webapp.git
+   git clone https://github.com/NEXSUS2002/Cash-Register-App.git
 
 2. Navigate to the project directory:
    cd Cash-Register-App
